@@ -1,0 +1,2 @@
+# Bakiye ile dialog göster
+$dialog show @s {"type":"minecraft:notice","title":{"text":"💰 Bakiyeniz","color":"gold","bold":true},"body":{"type":"minecraft:plain_message","contents":"§l§e💵 Mevcut Bakiye: §a$(balance)₺\n\n§7Para kazanmak için sunucuda aktif olun!"},"can_close_with_escape":true,"pause":false,"action":{"label":"🔙 Ana Menü","action":{"type":"minecraft:run_command","command":"/function gulceeconomy:ui/show_main"}}}

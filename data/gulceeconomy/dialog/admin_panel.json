@@ -1,0 +1,123 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "⚙️ Admin Paneli",
+    "color": "red",
+    "bold": true
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": "§l§c⚠️ SADECE YETKİLİLER!\n\n§7Ekonomi yönetim araçları:"
+  },
+  "can_close_with_escape": true,
+  "pause": false,
+  "exit_action": {
+    "label": "🔙 Ana Menü",
+    "action": {
+      "type": "minecraft:run_command",
+      "command": "/function gulceeconomy:ui/show_main"
+    }
+  },
+  "actions": [
+    {
+      "label": "💰 Para Ekle/Çıkar",
+      "action": {
+        "type": "minecraft:show_dialog",
+        "dialog": {
+          "type": "minecraft:multi_action",
+          "title": "💰 Para Ekle/Çıkar",
+          "inputs": [
+            {
+              "type": "minecraft:text",
+              "key": "target",
+              "label": "🎯 Oyuncu Adı",
+              "max_length": 16
+            },
+            {
+              "type": "minecraft:text",
+              "key": "amount",
+              "label": "💵 Miktar (+ veya -)",
+              "initial": "+100",
+              "max_length": 20
+            }
+          ],
+          "actions": [
+            {
+              "label": "✅ Uygula",
+              "action": {
+                "type": "minecraft:dynamic/run_command",
+                "template": "/function gulceeconomy:admin/modify_balance {target:\"$(target)\",amount:\"$(amount)\"}"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "🔄 Bakiye Sıfırla",
+      "action": {
+        "type": "minecraft:show_dialog",
+        "dialog": {
+          "type": "minecraft:multi_action",
+          "title": "🔄 Bakiye Sıfırla",
+          "body": {
+            "type": "minecraft:plain_message",
+            "contents": "§c⚠️ DİKKAT: Bu işlem geri alınamaz!"
+          },
+          "inputs": [
+            {
+              "type": "minecraft:text",
+              "key": "target",
+              "label": "🎯 Oyuncu Adı",
+              "max_length": 16
+            }
+          ],
+          "actions": [
+            {
+              "label": "✅ Sıfırla",
+              "action": {
+                "type": "minecraft:dynamic/run_command",
+                "template": "/function gulceeconomy:admin/reset_balance {target:\"$(target)\"}"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "📊 Tüm Bakiyeleri Göster",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "/function gulceeconomy:admin/show_all_balances"
+      }
+    },
+    {
+      "label": "🎁 Tümüne Para Ver",
+      "action": {
+        "type": "minecraft:show_dialog",
+        "dialog": {
+          "type": "minecraft:multi_action",
+          "title": "🎁 Tüm Oyunculara Para Ver",
+          "inputs": [
+            {
+              "type": "minecraft:text",
+              "key": "amount",
+              "label": "💵 Miktar",
+              "initial": "1000",
+              "max_length": 10
+            }
+          ],
+          "actions": [
+            {
+              "label": "✅ Dağıt",
+              "action": {
+                "type": "minecraft:dynamic/run_command",
+                "template": "/function gulceeconomy:admin/give_all {amount:$(amount)}"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

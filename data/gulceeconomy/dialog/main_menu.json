@@ -1,0 +1,70 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "💰 GULCE",
+    "extra": [
+      {
+        "text": " - ",
+        "color": "yellow",
+        "bold": true
+      },
+      {
+        "text": "Economy",
+        "color": "green",
+        "bold": true
+      }
+    ],
+    "color": "gold",
+    "bold": true
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": "§l§e💵 Hoş geldin! Ekonomi sistemine erişebilirsin.\n\n§l§c⚠️ Kişisel bilgilerinizi paylaşmayın!\n§l§c🔒 Gerçek para ile ilgili teklifler dolandırıcılıktır!"
+  },
+  "can_close_with_escape": true,
+  "pause": false,
+  "exit_action": {
+    "label": "❌ Kapat",
+    "action": {
+      "type": "minecraft:suggest_command",
+      "command": "/say Ekonomi paneli kapatıldı."
+    }
+  },
+  "actions": [
+    {
+      "label": "💰 Bakiyem",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "/function gulceeconomy:ui/show_balance"
+      }
+    },
+    {
+      "label": "🏪 Mağaza",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "/function gulceeconomy:ui/show_shop"
+      }
+    },
+    {
+      "label": "💸 Para Gönder",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "/function gulceeconomy:ui/show_transfer"
+      }
+    },
+    {
+      "label": "📊 İstatistiklerim",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "/function gulceeconomy:ui/show_stats"
+      }
+    },
+    {
+      "label": "⚙️ Admin Paneli",
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "/function gulceeconomy:admin/check_permission"
+      }
+    }
+  ]
+}

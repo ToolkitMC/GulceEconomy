@@ -1,0 +1,23 @@
+# Varsayılan: metinleri otomatik algıla
+text=auto
+
+# Minecraft datapack dosyaları (LF şart)
+*.mcfunction text eol=lf
+*.json text eol=lf
+*.nbt text eol=lf
+*.mcmeta text eol=lf
+
+# Dokümantasyon
+*.md text eol=lf
+*.txt text eol=lf
+
+# Binary dosyalar (ASLA dönüştürme)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.ogg binary
+*.mp3 binary
+*.zip binary
+*.jar binary

@@ -1,0 +1,2 @@
+# Özel eşyalar mağazası dialog'unu göster
+$dialog show @s {"type":"minecraft:notice","title":{"text":"🎁 Özel Eşyalar","color":"light_purple","bold":true},"body":{"type":"minecraft:plain_message","contents":"§l§6💰 Bakiyeniz: §a$(balance)₺\n\n§c⚠️ Bu kategori henüz geliştiriliyor!\n§7Yakında burada özel ve nadir eşyalar satın alabileceksiniz."},"can_close_with_escape":true,"pause":false,"action":{"label":"🔙 Geri","action":{"type":"minecraft:run_command","command":"/function gulceeconomy:ui/show_shop"}}}

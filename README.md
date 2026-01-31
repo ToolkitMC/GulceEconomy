@@ -34,7 +34,7 @@ Dialog tabanlı, vanilla Minecraft ekonomi sistemi. Herhangi bir plugin veya mod
 
 **Yetki verme:**
 - OP olan oyuncular otomatik erişime sahip
-- Veya: `/tag <oyuncu> add admin`
+- Veya: `/tag <oyuncu> add op`
 
 ## ⚙️ Teknik Detaylar
 
